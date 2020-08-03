@@ -1,1 +1,1 @@
-web: nodemon -x node app.js
+web: npm install -g nodemon && nodemon -x node app.js
