@@ -1,1 +1,1 @@
-worker: node app.js
+worker: npm install pm2 -g && pm2 start ./bin/www
