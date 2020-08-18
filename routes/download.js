@@ -7,7 +7,7 @@ router.get('/:id.mp3', function(req, res, next) {
 
 	var path = `./temps/${req.params.id}.mp3`
 	res.download(path);
-	// setTimeout(fs.unlink(path), 30000);
+	setTimeout(fs.unlink(path), 15000);
 });
 
 module.exports = router;
