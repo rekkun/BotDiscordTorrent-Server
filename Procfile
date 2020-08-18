@@ -1,1 +1,1 @@
-web: npm install -g nodemon && nodemon -x node app.js
+web: npm install -g pm2 && pm2 start app.js
