@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/:text', function(req, res, next) {
+router.get('/:lang/:text', function(req, res, next) {
 	const http = require('http');
 	const fs = require('fs');
 	
@@ -20,7 +20,7 @@ router.get('/:text', function(req, res, next) {
 	var id = random(8)
 	var path = `./temps/${id}.mp3`
 	const file = fs.createWriteStream(path);
-	const request = http.get(`http://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${req.params.text}`, function(response) {
+	const request = http.get(`http://translate.google.com/translate_tts?ie=UTF-8&tl=${req.params.lang}&client=tw-ob&q=${req.params.text}`, function(response) {
 	  response.pipe(file);
 	});
 	res.send(id)
