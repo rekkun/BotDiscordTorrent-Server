@@ -23,21 +23,21 @@ router.get('/:url', function(req, res, next) {
 	return result;
 	}
 
-	const space = /\s/g;
-	const hai_cham = new RegExp('\\:', 'g');
-	const gach_cheo = new RegExp('\\/', 'g');
+// 	const space = /\s/g;
+// 	const hai_cham = new RegExp('\\:', 'g');
+// 	const gach_cheo = new RegExp('\\/', 'g');
 	
-	var arr = decodeURI(req.params.url).replace(space, '_').split('&tr=')
+// 	var arr = decodeURI(req.params.url).replace(space, '_').split('&tr=')
 	
-	function enc(length) {
-		var result           = ''
-		for ( var i = 1; i < length; i++ ) {
-			result += ('&tr=' + arr[i].replace(hai_cham, '%3A').replace(gach_cheo, '%2F'))
-	   }
-	   return result;
-	}
-	var magnetURI = arr[0]+enc(arr.length)
-	var folder_name = decodeURI(req.params.url).replace(space, '_').split('&')[1].slice(3)
+// 	function enc(length) {
+// 		var result           = ''
+// 		for ( var i = 1; i < length; i++ ) {
+// 			result += ('&tr=' + arr[i].replace(hai_cham, '%3A').replace(gach_cheo, '%2F'))
+// 	   }
+// 	   return result;
+// 	}
+	var magnetURI = req.params.url
+	var folder_name = req.params.url.split('&')[1].slice(3)
 	
 	console.log(folder_name)
 	
