@@ -48,7 +48,7 @@ router.get('/:url', function(req, res, next) {
 			zl.archiveFolder(`./res/${folder_name}`, `./res/${folder_name}.zip`).then(function () {
 				const up = db.createDropboxUploadStream({
 				token: TOKEN,
-				path: `/${folder_name}.zip`,
+				path: `/Torrent/${folder_name}.zip`,
 				chunkSize: 1000 * 1024,
 				autorename: true,
 				mode: 'add'
