@@ -62,6 +62,7 @@ router.get('/:url', function(req, res, next) {
 					fs.createReadStream(`/tmp/${folder_name}.zip`).pipe(up).on('finish', () => {
 						console.log(`Upload thành công file ${folder_name}.zip`)
 						fs.unlink(`/tmp/${folder_name}.zip`)
+						console.log(`Đã xóa ${folder_name}.zip khỏi bộ nhớ Heroku`)
 					})
 				})
 
