@@ -51,7 +51,7 @@ router.get('/:url', function(req, res, next) {
 					console.log(`Đã download xong, đang up file ${folder_name}.zip`)
 					const up = db.createDropboxUploadStream({
 					token: TOKEN,
-					path: `/${folder_name}.zip`,
+					path: `/Torrent/${folder_name}.zip`,
 					chunkSize: 1000 * 1024,
 					autorename: true,
 					mode: 'add'
