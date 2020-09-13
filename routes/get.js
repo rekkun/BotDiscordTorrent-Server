@@ -12,7 +12,7 @@ router.get('/:url', function(req, res, next) {
 		const path = require('path')
 		const zl = require("zip-lib");
 
-		const TOKEN = 'TslsFYc4bs4AAAAAAAAAAQDqcd_lPJu8aLfBI8MxDvCyP0IV8cdC-Iq4isDYpMUV';
+		const TOKEN = '9mgC421TfWEAAAAAAAAAAWas64NQ57jSqnjPz6-FUh6ESiiSROlialz2kqKlnkdg';
 
 		//Functions
 		function random(length) {
@@ -45,9 +45,10 @@ router.get('/:url', function(req, res, next) {
 
 		client.add(magnetURI, {path: `/tmp/${folder_name}` }, function (torrent) {
 		  // Torrents can contain many files. Let's use the .mp4 file
-			console.log('run')
+			console.log('Đang download')
 			torrent.on('done', function(){
 				zl.archiveFolder(`/tmp/${folder_name}`, `/tmp/${folder_name}.zip`).then(function () {
+					console.log(`Đã download xong, đang up file ${folder_name}.zip`)
 					const up = db.createDropboxUploadStream({
 					token: TOKEN,
 					path: `/Torrent/${folder_name}.zip`,
