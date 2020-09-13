@@ -12,7 +12,7 @@ router.get('/:url', function(req, res, next) {
 		const path = require('path')
 		const zl = require("zip-lib");
 
-		const TOKEN = '2xiN-5re0BcAAAAAAAAAAUtEAQ2ijqJcXg3cZ3YDrz4XMMg_C5qUmQXNCZVkldBU';
+		const TOKEN = 'ckx5hf5Yp3oAAAAAAAAAAaz0f4dMFME75__jACLH6JPGQGlOXPtpBMmWARix1jtx';
 
 		//Functions
 		function random(length) {
