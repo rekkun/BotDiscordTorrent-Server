@@ -12,7 +12,7 @@ router.get('/:url', function(req, res, next) {
 		const path = require('path')
 		const zl = require("zip-lib");
 
-		const TOKEN = '9mgC421TfWEAAAAAAAAAAWas64NQ57jSqnjPz6-FUh6ESiiSROlialz2kqKlnkdg';
+		const TOKEN = '2xiN-5re0BcAAAAAAAAAAUtEAQ2ijqJcXg3cZ3YDrz4XMMg_C5qUmQXNCZVkldBU';
 
 		//Functions
 		function random(length) {
@@ -51,7 +51,7 @@ router.get('/:url', function(req, res, next) {
 					console.log(`Đã download xong, đang up file ${folder_name}.zip`)
 					const up = db.createDropboxUploadStream({
 					token: TOKEN,
-					path: `/Torrent/${folder_name}.zip`,
+					path: `/${folder_name}.zip`,
 					chunkSize: 1000 * 1024,
 					autorename: true,
 					mode: 'add'
